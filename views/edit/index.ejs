@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>My CRUD in NodeJS</title>
+</head>
+
+<body>
+
+    <div class="container col-6">
+        <h2>Editar Registro</h2>
+        <% data.forEach(function(details) { %>
+        <form method="POST" action="/edit/<%= details._id %>">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label"><%= details.nome %></label>
+                <div class="col-sm-10">
+                    <input type="text" name="nome" class="form-control" value="<%= details.nome %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label"><%= details.email %></label>
+                <div class="col-sm-10">
+                    <input type="email" name="email" class="form-control" value="<%= details.email %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label"><%= details.nascimento %></label>
+                <div class="col-sm-10">
+                    <input type="date" name="nascimento" class="form-control" value="<%= details.nascimento %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label"><%= details.telefone %></label>
+                <div class="col-sm-10">
+                    <input type="text" name="telefone" class="form-control" value="<%= details.telefone %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label"><%= details.cpf %></label>
+                <div class="col-sm-10">
+                    <input type="text" name="cpf" class="form-control" value="<%= details.cpf %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label"><%= details.cidade %></label>
+                <div class="col-sm-10">
+                    <input type="text" name="cidade" class="form-control" value="<%= details.cidade %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label"><%= details.estado %></label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="estado" id="exampleFormControlSelect1">
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                        <option value="EX">Estrangeiro</option>
+                    </select>
+                </div>
+            </div>
+            <% }) %>
+            <button class="btn btn-primary" type="submit">Salvar edições</button>
+        </form>
+
+        <br>
+        <a href="/show">Ver todos usuários</a> -
+        <a href="/">Cadastrar novo usuário</a>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>CRUD Node.js</title>
+</head>
+
+<body>
+    <div class="container col-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Nascimento</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function(details) { %>
+                <tr>
+                    <td><%= details.nome %></td>
+                    <td><%= details.email %></td>
+                    <td><%= details.nascimento %></td>
+                    <td><%= details.telefone %></td>
+                    <td><%= details.cpf %></td>
+                    <td><%= details.cidade %></td>
+                    <td><%= details.estado %></td>
+                    <td>
+                        <a href="/edit/<%= details._id %>">Editar</a> -
+                        <a href="/delete/<%= details._id %>">Deletar</a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+        <a href="/">Cadastrar novo usuário</a>
+    </div>
+</body>
+
+</html>
